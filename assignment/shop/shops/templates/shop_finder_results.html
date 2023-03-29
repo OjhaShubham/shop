@@ -1,0 +1,7 @@
+<h1>Shops within {{ distance }} km of ({{ latitude }}, {{ longitude }})</h1>
+<ul>
+{% for shop in shops %}
+  <li>{{ shop.name }} ({{ shop.latitude }}, {{ shop.longitude }})</li>
+{% endfor %}
+</ul>
+<a href="{% url 'shop_finder' %}">Search Again</a>

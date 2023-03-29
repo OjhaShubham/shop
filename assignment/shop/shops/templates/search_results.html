@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Search Results</h1>
+  {% if shops %}
+    <p>Found {{ shops|length }} shops within {{ distance }} km of your location:</p>
+    <ul>
+      {% for shop in shops %}
+        <li>{{ shop.name }} - {{ shop.address }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No shops found within {{ distance }} km of your location.</p>
+  {% endif %}
+{% endblock %}

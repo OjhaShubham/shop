@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Search Shops</h1>
+  <form method="post" action="{% url 'search_results' %}">
+    {% csrf_token %}
+    <label for="latitude">Latitude:</label>
+    <input type="text" name="latitude" id="latitude">
+    <br>
+    <label for="longitude">Longitude:</label>
+    <input type="text" name="longitude" id="longitude">
+    <br>
+    <label for="distance">Distance (km):</label>
+    <input type="text" name="distance" id="distance">
+    <br>
+    <button type="submit">Search</button>
+  </form>
+{% endblock %}
